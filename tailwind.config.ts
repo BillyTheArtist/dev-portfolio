@@ -8,6 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        nonBlack: '#242120',
+        brightGrey: '#F5F5F5',
+        standardGrey: '#E2DED1',
+        baseGrey: '#393C45',
+        blueGrey: '#1C1F2C',
+        darkBlueGrey: '#090914',
+        darkishBlueGrey: '#12141f',
+        darkOrange: '#9F4811',
+        niceOrange: '#D6613A',
+        baseOrange: '#BF5616',
+        burntOrange: '#7E3B0D',
+        negativeOrange: '#5E2C0A',
+      },
+      fontFamily: {
+        leagueSpartan: ['League Spartan', 'sans'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

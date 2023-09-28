@@ -46,28 +46,33 @@ export default function Home () {
   return (
     <main className={montserrat.className}>
       {/* Page Parent Box */}
-      <div className='flex flex-col min-h-screen bg-baseBG'>
+      <div className='flex flex-col min-h-screen bg-gradient-to-b from-baseBG to-liteBG'>
         {/* Landing Box container-Text and Image */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 place-items-center'>
           {/* Text half */}
-          <div className='w-full h-full bg-gradient-to-r from-almostBlack to-black text-brightGrey flex justify-center'>
-            <div className='text-left'>
+          <div className='w-full h-full bg-gradient-to-b from-nonBlack to-almostBlack md:bg-gradient-to-r from-nonBlack to-almostBlack lg:bg-gradient-to-r from-nonBlack to-almostBlack xl:bg-gradient-to-r from-nonBlack to-almostBlack text-brightGrey flex justify-center '>
+            <div className='relative'>
+              <div className='absolute top-0 -left-20 w-72 h-72 bg-negativeOrange rounded-full opacity-50 blur-2xl animate-blob animation-delay-2000' />
+              <div className='absolute top-0 -left-60 w-72 h-72 bg-niceOrange rounded-full opacity-50 blur-2xl animate-blob' />
+              <div className='absolute top-20 right-40 w-72 h-72 bg-boxLite rounded-full opacity-50 blur-2xl animate-blob animation-delay-4000' />
               <h1
-                className={`text-standardGrey mt-40 md:mt-40 lg:mt-40 xl:mt-60 text-4xl leading-relaxed ${montserratSemiBold.className}`}
+                className={`text-standardGrey mt-40 md:mt-40 lg:mt-40 xl:mt-60 text-4xl mix-blend-screen ${montserratSemiBold.className}`}
               >
                 Billy Townsend
               </h1>
               <p
-                className={`text-standardGrey text-2xl ${montserratSemiBold.className}`}
+                className={`text-standardGrey text-2xl mix-blend-screen ${montserratSemiBold.className}`}
               >
                 Software Engineer
               </p>
               <p
-                className={`text-niceOrange mt-5 text-1xl leading-relaxed ${montserrat.className}`}
+                className={`text-niceOrange mt-5 text-1xl leading-relaxed mix-blend-screen  ${montserrat.className}`}
               >
                 Industry contemporary software
               </p>
-              <p className={`text-niceOrange text-1xl ${montserrat.className}`}>
+              <p
+                className={`text-niceOrange text-1xl mix-blend-screen ${montserrat.className}`}
+              >
                 Cadmium
               </p>
 
@@ -99,10 +104,10 @@ export default function Home () {
             </div>
           </div>
           {/* Image half */}
-          <div className='w-full h-full bg-black flex items-end max-w-screen'>
+          <div className='w-full h-full bg-almostBlack flex items-end max-w-screen'>
             <div className=''>
               <Image
-                src='/images/mainPortHero.png'
+                src='/images/trueBlur.png'
                 alt='hero'
                 height={1024}
                 width={1024}
@@ -111,17 +116,35 @@ export default function Home () {
           </div>
         </div>
 
-        {/* Header */}
-        <header className='py-6 bg-gradient-to-b from-zinc-200 to-transparent dark:from-inherit dark:via-zinc-800/30 dark:border-neutral-800/30'>
-          <div className='container mx-auto px-4'>
-            <h1 className='text-4xl text-center text-standardGrey'>
-              Billy Townsend
-            </h1>
-            <p className='text-sm text-center text-standardGrey'>
-              Web Developer
-            </p>
+        <div className='flex mx-auto space-x-8'>
+          <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")] flex justify-center'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='icon icon-tabler icon-tabler-device-desktop-analytics svg-custom-fill mt-16'
+              width='72'
+              height='72'
+              viewBox='0 0 24 24'
+              stroke-width='2'
+              stroke='currentColor'
+              fill='none'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            >
+              <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+              <path d='M3 4m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z'></path>
+              <path d='M7 20h10'></path>
+              <path d='M9 16v4'></path>
+              <path d='M15 16v4'></path>
+              <path d='M9 12v-4'></path>
+              <path d='M12 12v-1'></path>
+              <path d='M15 12v-2'></path>
+              <path d='M12 12v-1'></path>
+            </svg>
           </div>
-        </header>
+          <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")]'></div>
+          <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")]'></div>
+          <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")]'></div>
+        </div>
 
         {/* Content */}
         <section className='container mx-auto p-4 flex-grow'>
@@ -164,9 +187,11 @@ export default function Home () {
         </Modal>
 
         {/* Footer */}
-        <footer className='py-4 bg-gradient-to-t from-white via-white dark:from-almostBlack dark:via-baseBG'>
+        <footer className='py-4 bg-footerBG'>
           <div className='container mx-auto px-4 text-center'>
-            <p className='text-standardGrey'>
+            <p
+              className={` text-brightGrey text-sm ${montserratSemiBold.className}`}
+            >
               &copy; {new Date().getFullYear()} Billy Townsend. All rights
               reserved.
             </p>

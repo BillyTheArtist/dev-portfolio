@@ -8,6 +8,7 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    
     colors: {
       nonBlackGrey: "#242120",
       nonBlack: "#181514",

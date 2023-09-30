@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </section>
         <section className="flex w-full justify-center bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px]mb-[-50px] pb-[50px]">
-          <div className="max-w-[1470px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 place-items-center justify-center ">
+          <div className="max-w-[1470px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 place-items-center justify-center ">
             <HeptaBox>
               <ComputerIcon />
               <h1

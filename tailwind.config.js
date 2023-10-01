@@ -6,6 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     './src/**/*.{ts,tsx}',
+    ['./App.jsx'],
 	],
   theme: {
     
@@ -18,7 +19,9 @@ module.exports = {
       baseCream: "#F6CFAA",
       baseGrey: "#393C45",
       baseBG: "#0C1328",
+      altBG: "#171E2A",
       liteBG: "#16182A",
+      hiBG: "#1C1E3B",
       footerBG: "#0D1227",
       baseBox: "#1C2237",
       boxLite: "#696984",
@@ -35,6 +38,9 @@ module.exports = {
       burntOrange: "#7E3B0D",
       negativeOrange: "#5E2C0A",
       transparent: "#0000",
+    },
+    boxShadow: {
+      'around': '0 5px 40px 20px rgba(0, 0, 0, 0.3)',
     },
     animation: {
       blob: "blob 9s infinite",

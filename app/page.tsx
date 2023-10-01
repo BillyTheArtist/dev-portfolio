@@ -8,18 +8,27 @@ import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { MusicIcon } from "@/components/icons/MusicIcon";
 import { CardIcon } from "@/components/icons/CardIcon";
+import { SeparatorFooter } from "@/components/ui/SeparatorFooter";
 import { Separator } from "@/components/ui/separator";
 import { Roboto_Slab, Montserrat } from "next/font/google";
 import Image from "next/image";
 import { BrushIcon } from "@/components/icons/BrushIcon";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import Link from "next/link";
 
 {
   /* Fonts */
 }
-const roboto = Roboto_Slab({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
+
 const montserratLight = Montserrat({
   weight: "300",
   subsets: ["latin"],
@@ -55,7 +64,43 @@ export default function Home() {
   return (
     <main className={montserrat.className}>
       {/* Page Parent Box */}
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen relative lg:bg-baseBG">
+        <div className="bg-boxLite flex justify-center items-center">
+          <NavigationMenu className="absolute top-0  md:right-0 mt-4 md:mr-14">
+            <NavigationMenuList className="bg-buttonOrange p-2 rounded-full">
+              <Link href="/skills">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-l-2xl rounded-r-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Skills
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+              <Separator decorative />
+              <Link href="/myprojects">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Projects
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+              <Separator decorative />
+              <Link href="/contact">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-r-2xl rounded-l-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Contact
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
         {/* Landing Box section-Text and Image */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 place-items-center">
           {/* Text half */}
@@ -124,8 +169,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="flex w-full justify-center bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px]mb-[-50px] pb-[50px]">
-          <div className="max-w-[1470px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 place-items-center justify-center ">
+        <section className=" flex w-full justify-center bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px]mb-[-50px] pb-[50px]">
+          <div className="max-w-[1470px] mt-20 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 place-items-center justify-center">
             <HeptaBox>
               <ComputerIcon />
               <h1
@@ -201,7 +246,7 @@ export default function Home() {
         {/* Footer */}
         <FooterPeaks />
         <footer className="grid grid-cols-1 place-items-center bg-boxLite md:space-x-7">
-          <Separator />
+          <SeparatorFooter />
           <div className="flex items-center justify-center bg-boxLite md:space-x-7">
             <LinkedinIcon />
             <GithubIcon />

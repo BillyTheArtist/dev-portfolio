@@ -1,73 +1,132 @@
-'use client'
-import React, { useState } from 'react'
-import { Modal } from '@/components/Modal'
-import { Roboto_Slab, Montserrat } from 'next/font/google'
-import Image from 'next/image'
+"use client";
+import React, { useState } from "react";
+import { Modal } from "@/components/Modal";
+import { HeptaBox } from "@/components/HeptaBox";
+import { FooterPeaks } from "@/components/FooterPeaks";
+import { ComputerIcon } from "@/components/icons/ComputerIcon";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { MusicIcon } from "@/components/icons/MusicIcon";
+import { CardIcon } from "@/components/icons/CardIcon";
+import { SeparatorFooter } from "@/components/ui/SeparatorFooter";
+import { Separator } from "@/components/ui/separator";
+import { Roboto_Slab, Montserrat } from "next/font/google";
+import Image from "next/image";
+import { BrushIcon } from "@/components/icons/BrushIcon";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import Link from "next/link";
 
 {
   /* Fonts */
 }
-const roboto = Roboto_Slab({
-  weight: ['400', '700'],
-  subsets: ['latin']
-})
-const montserratLight = Montserrat({
-  weight: '300',
-  subsets: ['latin']
-})
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['latin']
-})
-const montserratSemiBold = Montserrat({
-  weight: '500',
-  subsets: ['latin']
-})
-const montserratBold = Montserrat({
-  weight: '600',
-  subsets: ['latin']
-})
-const montserratExtraBold = Montserrat({
-  weight: '800',
-  subsets: ['latin']
-})
 
-export default function Home () {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+const montserratLight = Montserrat({
+  weight: "300",
+  subsets: ["latin"],
+});
+const montserrat = Montserrat({
+  weight: "400",
+  subsets: ["latin"],
+});
+const montserratSemiBold = Montserrat({
+  weight: "500",
+  subsets: ["latin"],
+});
+const montserratBold = Montserrat({
+  weight: "600",
+  subsets: ["latin"],
+});
+const montserratExtraBold = Montserrat({
+  weight: "800",
+  subsets: ["latin"],
+});
+
+export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const openModal = () => {
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-  }
+    setIsModalOpen(false);
+  };
 
   return (
     <main className={montserrat.className}>
       {/* Page Parent Box */}
-      <div className='flex flex-col min-h-screen bg-baseBG'>
-        {/* Landing Box container-Text and Image */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 place-items-center'>
+      <div className="flex flex-col min-h-screen relative lg:bg-baseBG">
+        <div className="bg-boxLite flex justify-center items-center">
+          <NavigationMenu className="absolute top-0  md:right-0 mt-4 md:mr-14">
+            <NavigationMenuList className="bg-buttonOrange p-2 rounded-full">
+              <Link href="/skills">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-l-2xl rounded-r-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Skills
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+              <Separator decorative />
+              <Link href="/myprojects">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Projects
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+              <Separator decorative />
+              <Link href="/contact">
+                <NavigationMenuItem className="min-w-[100px] bg-buttonOrange  p-[4px] rounded-r-2xl rounded-l-[2px] text-center hover:bg-baseOrange">
+                  <NavigationMenuLink
+                    className={`text-brightGrey ${montserratSemiBold.className}`}
+                  >
+                    Contact
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </Link>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Landing Box section-Text and Image */}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 place-items-center">
           {/* Text half */}
-          <div className='w-full h-full bg-gradient-to-r from-almostBlack to-black text-brightGrey flex justify-center'>
-            <div className='text-left'>
+          <div className="w-full h-full bg-gradient-to-b from-nonBlack to-almostBlack md:bg-gradient-to-r from-nonBlack to-almostBlack lg:bg-gradient-to-r from-nonBlack to-almostBlack xl:bg-gradient-to-r from-nonBlack to-almostBlack text-brightGrey flex justify-center ">
+            <div className="relative">
+              <div className="absolute top-0 -left-20 w-72 h-72 bg-negativeOrange rounded-full opacity-50 blur-2xl animate-blob animation-delay-2000" />
+              <div className="absolute top-0 -left-60 w-72 h-72 bg-niceOrange rounded-full opacity-50 blur-2xl animate-blob" />
+              <div className="absolute top-20 right-40 w-72 h-72 bg-boxLite rounded-full opacity-50 blur-2xl animate-blob animation-delay-4000" />
               <h1
-                className={`text-standardGrey mt-40 md:mt-40 lg:mt-40 xl:mt-60 text-4xl leading-relaxed ${montserratSemiBold.className}`}
+                className={`text-standardGrey mt-40 md:mt-40 lg:mt-40 xl:mt-60 text-4xl mix-blend-screen ${montserratSemiBold.className}`}
               >
                 Billy Townsend
               </h1>
               <p
-                className={`text-standardGrey text-2xl ${montserratSemiBold.className}`}
+                className={`text-standardGrey text-2xl mix-blend-screen ${montserratSemiBold.className}`}
               >
                 Software Engineer
               </p>
               <p
-                className={`text-niceOrange mt-5 text-1xl leading-relaxed ${montserrat.className}`}
+                className={`text-niceOrange mt-5 text-1xl leading-relaxed mix-blend-screen  ${montserrat.className}`}
               >
                 Industry contemporary software
               </p>
-              <p className={`text-niceOrange text-1xl ${montserrat.className}`}>
+              <p
+                className={`text-niceOrange text-1xl mix-blend-screen ${montserrat.className}`}
+              >
                 Cadmium
               </p>
 
@@ -92,87 +151,121 @@ export default function Home () {
               </p>
               <button
                 onClick={openModal}
-                className='mt-10 bg-buttonOrange text-brightGrey font-semibold py-2 px-4 rounded-3xl transition duration-300 ease-in-out'
+                className="mt-10 bg-buttonOrange text-brightGrey font-semibold py-2 px-4 rounded-3xl transition duration-300 ease-in-out"
               >
                 Open the thing
               </button>
             </div>
           </div>
           {/* Image half */}
-          <div className='w-full h-full bg-black flex items-end max-w-screen'>
-            <div className=''>
+          <div className="w-full h-full bg-almostBlack flex items-end max-w-screen">
+            <div className="">
               <Image
-                src='/images/mainPortHero.png'
-                alt='hero'
+                src="/images/trueBlur.png"
+                alt="hero"
                 height={1024}
                 width={1024}
               />
             </div>
           </div>
-        </div>
-
-        {/* Header */}
-        <header className='py-6 bg-gradient-to-b from-zinc-200 to-transparent dark:from-inherit dark:via-zinc-800/30 dark:border-neutral-800/30'>
-          <div className='container mx-auto px-4'>
-            <h1 className='text-4xl text-center text-standardGrey'>
-              Billy Townsend
-            </h1>
-            <p className='text-sm text-center text-standardGrey'>
-              Web Developer
-            </p>
-          </div>
-        </header>
-
-        {/* Content */}
-        <section className='container mx-auto p-4 flex-grow'>
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            <div className='bg-baseBox rounded-lg shadow-xl p-4 flex items-center justify-center'></div>
-
-            {/* Portfolio Item 2 */}
-            <div className='bg-baseBox rounded-lg shadow-lg p-6'>
+        </section>
+        <section className=" flex w-full justify-center bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px]mb-[-50px] pb-[50px]">
+          <div className="max-w-[1470px] mt-20 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 place-items-center justify-center">
+            <HeptaBox>
+              <ComputerIcon />
               <h1
-                className={`text-xl text-left ml-1 text-niceOrange mb-3 ${montserratExtraBold.className}`}
+                className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
               >
-                Front-End Developer with a Crypto Edge
+                Computer
               </h1>
-              <div
-                className={`border-2 border-solid text-brightGrey border-baseOrange shadow-sm p-4 rounded-lg text-sm text-center leading-relaxed ${montserratSemiBold.className}`}
+              <p
+                className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
               >
-                As a dedicated front-end developer, I specialize in creating
-                seamless UIs and captivating experiences for crypto and
-                blockchain web apps, as well as dynamic marketing sites. With an
-                eye for innovation and a passion for staying on the cutting edge
-                of web development, I&apos;m committed to transforming complex
-                concepts into user-friendly solutions. Let&apos;s collaborate on
-                your next project and bring your vision to life.
-              </div>
-            </div>
-
-            {/* Portfolio Item 3 */}
-            <div className='bg-baseBox rounded-lg shadow-lg p-4'>
-              {/* portfolio content */}
-            </div>
+                Blockchain web apps, as well as dynamic
+                <br />
+                I&apos;m committed to transforming complex
+                <br />
+                Let&apos;s collaborate on your next project
+              </p>
+            </HeptaBox>
+            <HeptaBox>
+              <MusicIcon />
+              <h1
+                className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
+              >
+                Music Taste
+              </h1>
+              <p
+                className={`mb-3 text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
+              >
+                Blockchain web apps, as well as dynamic
+                <br />
+                I&apos;m committed to transforming complex
+                <br />
+                Let&apos;s collaborate on your next project
+              </p>
+            </HeptaBox>
+            <HeptaBox>
+              <CardIcon />
+              <h1
+                className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
+              >
+                Card Games
+              </h1>
+              <p
+                className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
+              >
+                Blockchain web apps, as well as dynamic
+                <br />
+                I&apos;m committed to transforming complex
+                <br />
+                Let&apos;s collaborate on your next project
+              </p>
+            </HeptaBox>
+            <HeptaBox>
+              <BrushIcon />
+              <h1
+                className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
+              >
+                Artwork
+              </h1>
+              <p
+                className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
+              >
+                Blockchain web apps, as well as dynamic
+                <br />
+                I&apos;m committed to transforming complex
+                <br />
+                Let&apos;s collaborate on your next project
+              </p>
+            </HeptaBox>
           </div>
         </section>
-
         {/* Modal */}
-        <Modal isOpen={isModalOpen} handleClose={closeModal}>
-          <div className='text-center'>
-            <h2 className='text-xl font-semibold mb-4'>Modal Content</h2>
-            <p>This is the content of the modal.</p>
-          </div>
-        </Modal>
 
         {/* Footer */}
-        <footer className='py-4 bg-gradient-to-t from-white via-white dark:from-almostBlack dark:via-baseBG'>
-          <div className='container mx-auto px-4 text-center'>
-            <p className='text-standardGrey'>
+        <FooterPeaks />
+        <footer className="grid grid-cols-1 place-items-center bg-boxLite md:space-x-7">
+          <SeparatorFooter />
+          <div className="flex items-center justify-center bg-boxLite md:space-x-7">
+            <LinkedinIcon />
+            <GithubIcon />
+            <p
+              className={`mb-3 text-baseBG text-mg ${montserratBold.className}`}
+            >
               &copy; {new Date().getFullYear()} Billy Townsend. All rights
               reserved.
             </p>
           </div>
         </footer>
       </div>
+      <Modal isOpen={isModalOpen} handleClose={closeModal}>
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-4">Modal Content</h2>
+          <p>This is the content of the modal.</p>
+          <div className="h-40 w-40 border-[6px] border-b-transparent border-t-transparent  border-boxLite rounded-full" />
+        </div>
+      </Modal>
     </main>
-  )
+  );
 }

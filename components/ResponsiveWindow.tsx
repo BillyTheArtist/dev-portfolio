@@ -1,53 +1,67 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { Project } from '@/types/project'
 
 //Types
 interface Props {
-  title: string
-  image: string
-  description: string
-  link: string
-  gradient: string
+  projectProp: Project
 }
 
-export const ResponsiveWindow = ({
-  image,
-  title,
-  description,
-  link,
-  gradient
-}: Props) => {
+export const ResponsiveWindow = ({ projectProp }: Props) => {
+  const {
+    gradient,
+    descriptionGradient,
+    link,
+    glow,
+    title,
+    image,
+    description
+  } = projectProp
+  const backgroundStyles = {
+    backgroundImage: `url(${gradient})`
+  }
+  const descriptionBackgroundStyles = {
+    backgroundImage: `url(${descriptionGradient})`
+  }
   return (
-    <div
-      //   w='full'
-      //   align='center'
-      //   padding='6'
-      //   backgroundColor='box-bg-primary'
-      //   boxShadow='box-shadow-primary'
-      //   rounded='lg'
-      //   direction='column'
-      className=' bg-nonBlackGrey w-full p-6 rounded-lg flex flex-col items-center shadow-around'
-    >
-      <div className=' rounded-lg cursor-pointer w-full z-1 relative'>
-        <div className='flex flex-col items-center h-[500px] relative'>
-          <div className=' max-h-[500px] after:transition-all duration-300 ease-in-out after:w-full after:h-full after:absolute after:rounded-lg after:left-0 after:top-0 after:blur-lg after:z-negative-1'>
-            <Image
-              src={image}
-              alt='hero'
-              border-radius='lg'
-              draggable={false}
-              objectFit='contain'
-              fill
-            />
+    <Link href={link} passHref target='_blank' rel='noopener noreferrer'>
+      <div
+        className={`mb-2 md:mb-10 shadow-around transition-shadow ${glow} transition-transform transform hover:scale-103 rounded-xl`}
+        style={{ transitionDuration: '0.7s' }}
+      >
+        <div
+          className={`bg-cover bg-center w-full rounded-t-xl flex flex-col items-center  `}
+          style={{
+            ...backgroundStyles
+          }}
+        >
+          <h1 className=' text-2xl lg:text-3xl mt-6 text-brightGrey'>
+            {title}
+          </h1>
+          <div className=' rounded-xl cursor-pointer w-full z-1 relative'>
+            <div className='flex flex-col items-center h-[200px] md:h-[300px] lg:h-[500px] relative'>
+              <div className=' max-h-[500px] after:transition-all duration-300 ease-in-out after:w-full after:h-full after:absolute after:rounded-lg after:left-0 after:top-0 after:blur-lg after:z-negative-1 '>
+                <Image
+                  src={image}
+                  alt='hero'
+                  border-radius='lg'
+                  draggable={false}
+                  objectFit='contain'
+                  fill
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <div
+          className={`w-full bg-cover bg-center h-[120px] rounded-b-xl flex justify-center items-center text-brightGrey text-md p-4`}
+          style={{
+            ...descriptionBackgroundStyles
+          }}
+        >
+          {description}
+        </div>
       </div>
-      <div className='flex flex-col'>
-        <h1 className=' text-2xl'>{title}</h1>
-        <p>{description}</p>
-        <a href='www.google.com'>
-          <p color='brand-orange'>{link}</p>
-        </a>
-      </div>
-    </div>
+    </Link>
   )
 }

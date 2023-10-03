@@ -46,6 +46,8 @@ module.exports = {
       'around': '0 5px 40px 20px rgba(0, 0, 0, 0.3)',
       'lightGlow': '0 0px 30px 8px #545EC4',
       'purpleGlow': '0 0px 30px 8px #9f60e6',
+      'goldGlow': '0 0px 30px 8px #cea364',
+      'fairGlow': '0 0px 30px 8px #b1bee7',
     },
     animation: {
       blob: "blob 9s infinite",

@@ -170,12 +170,14 @@ export default function Home () {
           </div>
         </section>
         <section
-          className={` flex w-full justify-center bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px] `}
+          className={` flex w-full  bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px] mb-[-50px] pb-[50px] `}
         >
           <span
-            className={` w-full h-full`}
+            className={`flex w-full h-full justify-center items-center`}
             style={{
-              backgroundImage: 'url(/images/circleSkatter.svg)'
+              backgroundImage: 'url(/images/circleSkatter.svg)',
+              backgroundPosition: 'top',
+              backgroundRepeat: 'repeat'
             }}
           >
             <div
@@ -253,7 +255,7 @@ export default function Home () {
           </span>
         </section>
         {/* Modal */}
-
+        <section className='flex w-full  bg-gradient-to-b from-transparent from 30% via-liteBG via-10% to-niceOrange to-90%  mt-[-15px] md:mt-[-80px] lg:mt-[-10px] pt-[100px] mb-[-50px]' />
         {/* Footer */}
         <FooterPeaks />
         <footer className='grid grid-cols-1 place-items-center bg-boxLite md:space-x-7'>

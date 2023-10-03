@@ -14,6 +14,7 @@ export const ResponsiveWindow = ({ projectProp }: Props) => {
     link,
     glow,
     title,
+    titleColor,
     image,
     description
   } = projectProp
@@ -35,7 +36,7 @@ export const ResponsiveWindow = ({ projectProp }: Props) => {
             ...backgroundStyles
           }}
         >
-          <h1 className=' text-2xl lg:text-3xl mt-6 text-brightGrey'>
+          <h1 className={`text-2xl lg:text-3xl mt-6 ${titleColor}`}>
             {title}
           </h1>
           <div className=' rounded-xl cursor-pointer w-full z-1 relative'>

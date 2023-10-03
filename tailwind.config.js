@@ -9,7 +9,10 @@ module.exports = {
     ['./App.jsx'],
 	],
   theme: {
-    
+    scale: {
+      '103': '1.03',
+      
+    },
     colors: {
       nonBlackGrey: "#242120",
       nonBlack: "#181514",
@@ -41,6 +44,8 @@ module.exports = {
     },
     boxShadow: {
       'around': '0 5px 40px 20px rgba(0, 0, 0, 0.3)',
+      'lightGlow': '0 0px 30px 8px #545EC4',
+      'purpleGlow': '0 0px 30px 8px #9f60e6',
     },
     animation: {
       blob: "blob 9s infinite",

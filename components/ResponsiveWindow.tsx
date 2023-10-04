@@ -36,9 +36,7 @@ export const ResponsiveWindow = ({ projectProp }: Props) => {
             ...backgroundStyles
           }}
         >
-          <h1 className={`text-2xl lg:text-3xl mt-6 ${titleColor}`}>
-            {title}
-          </h1>
+          <h1 className={`text-2xl lg:text-3xl mt-6 ${titleColor}`}>{title}</h1>
           <div className=' rounded-xl cursor-pointer w-full z-1 relative'>
             <div className='flex flex-col items-center h-[200px] md:h-[300px] lg:h-[500px] relative'>
               <div className=' max-h-[500px] after:transition-all duration-300 ease-in-out after:w-full after:h-full after:absolute after:rounded-lg after:left-0 after:top-0 after:blur-lg after:z-negative-1 '>

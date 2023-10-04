@@ -55,7 +55,7 @@ export const ResponsiveWindow = ({ projectProp }: Props) => {
           </div>
         </div>
         <div
-          className={`w-full bg-cover bg-center h-[120px] rounded-b-xl flex justify-center items-center text-brightGrey text-md p-4`}
+          className={`w-full bg-cover bg-center h-[120px] rounded-b-xl flex justify-center items-center text-brightGrey text-[10px] p-2 md:text-[12px] lg:text-lg lg:p-4`}
           style={{
             ...descriptionBackgroundStyles
           }}

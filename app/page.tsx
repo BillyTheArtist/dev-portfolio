@@ -24,6 +24,8 @@ import {
   NavigationMenuViewport
 } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import ClipboardJS from 'clipboard'
 
 {
   /* Fonts */
@@ -59,6 +61,15 @@ export default function Home () {
 
   const closeModal = () => {
     setIsModalOpen(false)
+  }
+
+  const copyToClipboard = (text: any) => {
+    const textField = document.createElement('textarea')
+    textField.innerText = text
+    document.body.appendChild(textField)
+    textField.select()
+    document.execCommand('copy')
+    textField.remove()
   }
 
   return (
@@ -131,38 +142,39 @@ export default function Home () {
               <p
                 className={`text-niceOrange mt-5 text-1xl leading-relaxed mix-blend-screen  ${montserrat.className}`}
               >
-                Industry contemporary software
+                Experienced web developer
               </p>
               <p
                 className={`text-niceOrange text-1xl mix-blend-screen ${montserrat.className}`}
               >
-                Cadmium
+                Human Being
               </p>
 
               <p
                 className={`mt-10 text-standardGrey text-sm text-left leading-relaxed ${montserratLight.className}`}
               >
-                Blockchain web apps, as well as dynamic
+                As a passionate web developer, I thrive on
                 <br />
-                marketing sites. With an eye for
+                the endless possibilities of programming.
                 <br />
-                innovation and a passion for staying
+                My journey in this ever-evolving field has
                 <br />
-                on the cutting edge of web development,
+                been driven by a deep-seated enthusiasm
+                <br />
+                for crafting valuable digital experiences.
                 <br />
                 I&apos;m committed to transforming complex
                 <br />
                 concepts into user-friendly solutions.
                 <br />
-                Let&apos;s collaborate on your next project
+                Together, let&apos;s build success.
                 <br />
-                and bring your vision to life.
               </p>
               <button
                 onClick={openModal}
                 className='mt-10 bg-buttonOrange text-brightGrey font-semibold py-2 px-4 rounded-3xl transition duration-300 ease-in-out'
               >
-                Open the thing
+                Contact Info
               </button>
             </div>
           </div>
@@ -197,16 +209,16 @@ export default function Home () {
                 <h1
                   className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
                 >
-                  Computer
+                  Coding
                 </h1>
                 <p
                   className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
                 >
-                  Blockchain web apps, as well as dynamic
+                  Programming is an avenue of expression
                   <br />
-                  I&apos;m committed to transforming complex
+                  I find incredibly rewarding and fulfilling.
                   <br />
-                  Let&apos;s collaborate on your next project
+                  Each project is a learning experience.
                 </p>
               </HeptaBox>
               <HeptaBox>
@@ -214,16 +226,16 @@ export default function Home () {
                 <h1
                   className={`mb-3 text-brightGrey text-xl ${montserrat.className}`}
                 >
-                  Music Taste
+                  Music
                 </h1>
                 <p
-                  className={`mb-3 text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
+                  className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
                 >
-                  Blockchain web apps, as well as dynamic
+                  I have always loved music and exploring all
                   <br />
-                  I&apos;m committed to transforming complex
+                  the amazing places it can take us when we
                   <br />
-                  Let&apos;s collaborate on your next project
+                  play a favorite track or album.
                 </p>
               </HeptaBox>
               <HeptaBox>
@@ -236,11 +248,11 @@ export default function Home () {
                 <p
                   className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
                 >
-                  Blockchain web apps, as well as dynamic
+                  I am an avid enthusiast of tabletop games
                   <br />
-                  I&apos;m committed to transforming complex
+                  with a preference for strategy and card
                   <br />
-                  Let&apos;s collaborate on your next project
+                  based games, i.e. Magic the Gathering.
                 </p>
               </HeptaBox>
               <HeptaBox>
@@ -253,11 +265,11 @@ export default function Home () {
                 <p
                   className={` text-brightGrey text-sm text-center leading-relaxed ${montserratLight.className}`}
                 >
-                  Blockchain web apps, as well as dynamic
+                  Creating art starting at a young age, I have
                   <br />
-                  I&apos;m committed to transforming complex
+                  cultivated skills in various physical media.
                   <br />
-                  Let&apos;s collaborate on your next project
+                  This allowed my creativity to grow.
                 </p>
               </HeptaBox>
             </div>
@@ -281,10 +293,52 @@ export default function Home () {
         </footer>
       </div>
       <Modal isOpen={isModalOpen} handleClose={closeModal}>
-        <div className='text-center'>
-          <h2 className='text-xl font-semibold mb-4'>Modal Content</h2>
-          <p>This is the content of the modal.</p>
-          <div className='h-40 w-40 border-[6px] border-b-transparent border-t-transparent  border-boxLite rounded-full' />
+        <div className='grid grid-cols-1 gap-2 text-center'>
+          <h2 className='text-xl text-brightGrey font-semibold mb-4'>
+            Billy Townsend
+          </h2>
+          <p className='text-brightGrey'>
+            (385) 265-2703{' '}
+            <button onClick={() => copyToClipboard('(385) 265-2703')}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='icon icon-tabler icon-tabler-copy'
+                width='18'
+                height='18'
+                viewBox='0 -3 24 24'
+                stroke-width='2'
+                stroke='currentColor'
+                fill='none'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+                <path d='M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z'></path>
+                <path d='M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2'></path>
+              </svg>
+            </button>
+          </p>
+          <p className='text-brightGrey'>
+            billy.iv.art@gmail.com{' '}
+            <button onClick={() => copyToClipboard('billy.iv.art@gmail.com')}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='icon icon-tabler icon-tabler-copy'
+                width='18'
+                height='18'
+                viewBox='0 -3 24 24'
+                stroke-width='2'
+                stroke='currentColor'
+                fill='none'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+                <path d='M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z'></path>
+                <path d='M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2'></path>
+              </svg>
+            </button>
+          </p>
         </div>
       </Modal>
     </main>

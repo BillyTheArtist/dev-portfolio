@@ -35,7 +35,7 @@ export const skills: Skill[] = [
     icon: <GithubSkillIcon className='lg:mr-3' />,
     skill: 'Github',
     description:
-      'Proficient in GitHub, I use this collaborative platform for version control and project management. I am experienced in creating repositories, managing branches, and collaborating with other developers to ensure efficient code development.'
+      'Experienced in GitHub, I use this collaborative platform for version control and project management. I am experienced in creating repositories, managing branches, and collaborating with other developers to ensure efficient code development.'
   },
   {
     icon: <TailwindIcon className='lg:mr-3' />,

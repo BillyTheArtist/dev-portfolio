@@ -6,7 +6,7 @@ interface Props {
 
 export function HeptaBox({ children }: Props) {
   return (
-    <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")] flex flex-col items-center'>
+    <div className='w-80 h-80 bg-cover bg-center bg-[url("/images/sevenSided.svg")] flex flex-col items-center justify-center'>
       {children}
     </div>
   );

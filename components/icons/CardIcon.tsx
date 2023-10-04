@@ -4,7 +4,7 @@ export function CardIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-cards svg-custom-fill mt-16"
+      className="icon icon-tabler icon-tabler-cards svg-custom-fill"
       width="72"
       height="72"
       viewBox="0 0 24 24"

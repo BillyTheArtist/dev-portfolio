@@ -4,10 +4,10 @@ import { Modal } from '@/components/Modal'
 import { HeptaBox } from '@/components/HeptaBox'
 import { FooterPeaks } from '@/components/FooterPeaks'
 import { ComputerIcon } from '@/components/icons/ComputerIcon'
-import { LinkedinIcon } from '@/components/icons/LinkedinIcon'
-import { GithubIcon } from '@/components/icons/GithubIcon'
 import { MusicIcon } from '@/components/icons/MusicIcon'
 import { CardIcon } from '@/components/icons/CardIcon'
+import { GithubIcon } from '@/components/icons/GithubIcon'
+import { LinkedinIcon } from '@/components/icons/LinkedinIcon'
 import { SeparatorFooter } from '@/components/ui/SeparatorFooter'
 import { Separator } from '@/components/ui/separator'
 import { Roboto_Slab, Montserrat } from 'next/font/google'
@@ -263,7 +263,6 @@ export default function Home () {
             </div>
           </span>
         </section>
-        {/* Modal */}
         <section className='flex w-full  bg-gradient-to-b from-transparent from 30% via-liteBG via-10% to-niceOrange to-90%  mt-[-15px] md:mt-[-80px] lg:mt-[-10px] pt-[100px] mb-[-50px]' />
         {/* Footer */}
         <FooterPeaks />

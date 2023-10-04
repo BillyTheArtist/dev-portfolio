@@ -33,6 +33,7 @@ module.exports = {
       darkBlueGrey: "#090914",
       darkishBlueGrey: "#12141f",
       darkOrange: "#9F4811",
+      reactBlue: "#50bbd8",
       niceOrange: "#D6613A",
       niceCreamOrange: "#e87c58",
       buttonOrange: "#FF862F",
@@ -45,6 +46,7 @@ module.exports = {
     boxShadow: {
       'around': '0 5px 40px 20px rgba(0, 0, 0, 0.3)',
       'lightGlow': '0 0px 30px 8px #545EC4',
+      'boxGlow': '0 0px 30px 8px #1C2237',
       'purpleGlow': '0 0px 30px 8px #9f60e6',
       'goldGlow': '0 0px 30px 8px #cea364',
       'fairGlow': '0 0px 30px 8px #b1bee7',

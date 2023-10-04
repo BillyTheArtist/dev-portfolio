@@ -69,7 +69,10 @@ export default function Home () {
           <NavigationMenu className='absolute top-0  md:right-0 mt-4 md:mr-14'>
             <NavigationMenuList className='bg-buttonOrange p-2 rounded-full'>
               <Link href='/skills'>
-                <NavigationMenuItem className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-l-2xl rounded-r-[2px] text-center hover:shadow-around'>
+                <NavigationMenuItem
+                  className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-l-2xl rounded-r-[2px] text-center hover:shadow-around'
+                  style={{ transitionDuration: '0.4s' }}
+                >
                   <NavigationMenuLink
                     className={`text-brightGrey ${montserratSemiBold.className}`}
                   >
@@ -79,7 +82,10 @@ export default function Home () {
               </Link>
               <Separator decorative />
               <Link href='/myprojects'>
-                <NavigationMenuItem className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-[2px] text-center hover:shadow-around'>
+                <NavigationMenuItem
+                  className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-[2px] text-center hover:shadow-around'
+                  style={{ transitionDuration: '0.4s' }}
+                >
                   <NavigationMenuLink
                     className={`text-brightGrey ${montserratSemiBold.className}`}
                   >
@@ -89,7 +95,10 @@ export default function Home () {
               </Link>
               <Separator decorative />
               <Link href='/contact'>
-                <NavigationMenuItem className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-r-2xl rounded-l-[2px] text-center hover:shadow-around'>
+                <NavigationMenuItem
+                  className='min-w-[100px] bg-buttonOrange  p-[4px] rounded-r-2xl rounded-l-[2px] text-center hover:shadow-around'
+                  style={{ transitionDuration: '0.4s' }}
+                >
                   <NavigationMenuLink
                     className={`text-brightGrey ${montserratSemiBold.className}`}
                   >

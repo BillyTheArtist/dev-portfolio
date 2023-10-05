@@ -1,28 +1,6 @@
-import React from 'react'
+
 import { HeptaBox } from './HeptaBox'
 import { MailboxIcon } from './icons/MailboxIcon'
-import { Montserrat } from 'next/font/google'
-
-const montserratLight = Montserrat({
-  weight: '300',
-  subsets: ['latin']
-})
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['latin']
-})
-const montserratSemiBold = Montserrat({
-  weight: '500',
-  subsets: ['latin']
-})
-const montserratBold = Montserrat({
-  weight: '600',
-  subsets: ['latin']
-})
-const montserratExtraBold = Montserrat({
-  weight: '800',
-  subsets: ['latin']
-})
 
 export function ContactForm () {
   const handleEmailButtonClick = () => {
@@ -47,10 +25,10 @@ export function ContactForm () {
   return (
     <HeptaBox>
       <div
-        className={`grid grid-cols-1 gap-2 place-items-center justify-center text-center lg:text-xl text-brightGrey ${montserrat.className}`}
+        className={`grid grid-cols-1 gap-2 place-items-center justify-center text-center lg:text-xl text-brightGrey`}
       >
         <MailboxIcon />
-        <h1 className={`mb-1 text-brightGrey text-[30px]  ${montserratBold.className}`}>
+        <h1 className={`mb-1 text-brightGrey text-[30px] font-bold`}>
           Contact Me!
         </h1>
         <a href={githubProfileUrl} target='_blank' rel='noopener noreferrer'>

@@ -108,7 +108,7 @@ export default function Home () {
           </div>
         </section>
         <section
-          className={` flex w-full  bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90%  mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px]`}
+          className={` flex w-full  bg-gradient-to-b from-transparent from 30% via-baseBG via-10% to-liteBG to-90% md:mb-[70px] mt-[-150px] md:mt-[-80px] lg:mt-[-100px] pt-[100px]`}
         >
           <span
             className={`flex w-full h-full justify-center items-center`}

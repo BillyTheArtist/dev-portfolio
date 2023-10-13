@@ -9,18 +9,16 @@ import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
 import { useTheme } from '@/context/themeContext'
 
-
-
 export function NavBar () {
-
-  const {theme} = useTheme()
+  const { theme } = useTheme()
 
   return (
-    <header className='h-[56px] fixed z-40 py-1'>
+    <header className={`${theme} h-[56px] fixed z-40 py-1 bg-transparent`}>
       <div className=' w-[100vw] flex justify-center z-50 items-center'>
-        
         <NavigationMenu className='text-[17px] '>
-          <NavigationMenuList className={` ${theme} bg-navBG p-2 rounded-full shadow-slight`}>
+          <NavigationMenuList
+            className={` ${theme} bg-navBG p-2 rounded-full shadow-slight`}
+          >
             <Link href='/'>
               <NavigationMenuItem
                 className={`min-w-[80px] bg-navBG font-semibold p-[4px] rounded-l-2xl rounded-r-[2px] text-center transition-shadow hover:shadow-boxGlow`}

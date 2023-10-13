@@ -21,20 +21,21 @@ export default function RootLayout ({
 }: {
   children: React.ReactNode
 }) {
+
   return (
-      <ThemeProvider>
-    <html lang='en'>
-        <body className={montserrat.className}>
+    <ThemeProvider>
+      <html lang='en'>
+        <body className={`${montserrat.className} bg-boxLite`}>
           <NavBar />
           <ToggleTheme />
           <main
-            className={`bg-gradient-to-b from-nonBlack to-liteBG min-h-[calc(100vh-177px)] pt-[56px]`}
+            className={` bg-brand min-h-[calc(100vh-177px)] pt-[56px]`}
           >
             {children}
           </main>
           <PageFooter />
         </body>
-    </html>
-      </ThemeProvider>
+      </html>
+    </ThemeProvider>
   )
 }

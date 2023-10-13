@@ -5,6 +5,6 @@ children: ReactNode
 }
 
 export interface ThemeContextProps {
-    theme: 'light' | 'dark'
+    theme: 'dark' | 'light'
     toggleTheme: () => void
 }

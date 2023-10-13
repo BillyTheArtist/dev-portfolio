@@ -31,6 +31,7 @@
     "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
+    "tw-colors": "^3.0.3",
     "typescript": "latest"
   }
 }

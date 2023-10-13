@@ -1,3 +1,6 @@
+const { createThemes } = require("tw-colors");
+import Image from 'next/image'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -5,13 +8,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    './src/**/*.{ts,tsx}',
-    ['./App.jsx'],
-	],
+    "./src/**/*.{ts,tsx}",
+    ["./App.jsx"],
+  ],
   theme: {
     scale: {
-      '103': '1.03',
-      
+      103: "1.03",
     },
     colors: {
       nonBlackGrey: "#242120",
@@ -44,17 +46,39 @@ module.exports = {
       transparent: "#0000",
     },
     boxShadow: {
-      'around': '0 5px 40px 20px rgba(0, 0, 0, 0.3)',
-      'lightGlow': '0 0px 30px 8px #545EC4',
-      'boxGlow': '0 0px 30px 8px #1C2237',
-      'purpleGlow': '0 0px 30px 8px #9f60e6',
-      'goldGlow': '0 0px 30px 8px #cea364',
-      'fairGlow': '0 0px 30px 8px #b1bee7',
+      around: "0 5px 40px 20px rgba(0, 0, 0, 0.3)",
+      slight: "0 5px 30px 2px rgba(0, 0, 0, 0.3)",
+      lightGlow: "0 0px 30px 8px #545EC4",
+      boxGlow: "0 0px 30px 8px #1C2237",
+      purpleGlow: "0 0px 30px 8px #9f60e6",
+      goldGlow: "0 0px 30px 8px #cea364",
+      fairGlow: "0 0px 30px 8px #b1bee7",
     },
     animation: {
       blob: "blob 9s infinite",
+      blink: "blink 10s ",
     },
     keyframes: {
+      blink: {
+        '0%, 18.1818%': {
+          opacity: 0,
+        },
+        '9.0909%, 27.2727%': {
+          opacity: 1,
+        },
+        '36.3636%, 54.5455%': {
+          opacity: 0,
+        },
+        '45.4545%, 63.6364%': {
+          opacity: 1,
+        },
+        '72.7273%, 90.9091%': {
+          opacity: 0,
+        },
+        '100%': {
+          opacity: 0,
+        },
+      },
       blob: {
         "0%": {
           transform: "translate(0px,0px) scale(1)",
@@ -77,6 +101,7 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -134,5 +159,54 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    createThemes({
+      light: {
+        primary: "#F3F",
+        secondary: "#F3F",
+        brand: "#F3F",
+        copyColor: "#2f323a",
+        copyAltColor: "#0063d5",
+        buttonColor: "#2f323a",
+        buttonText: "#F5F5F5",
+        gradientStart: "##eff0f2",
+        gradientEnd: "##eff0f2",
+        bottomGradientStart: "#F5F5F5",
+        bottomGradientEnd: "#eff0f2",
+        backgroundMain: "#eff0f2",
+        navBG: "#0063d5",
+        iconColor: "#2f323a",
+        blobLeft: "#0063d5",
+        blobRight: "#50bbd8",
+        blobBottom: "#696984",
+        footerGradientTop: "#eff0f2",
+        footerGradientBottom: "#3f81cc",
+        modalText: "#0063d5",
+        modalClose: "#2f323a",
+      },
+      dark: {
+        primary: "#9f60e6",
+        secondary: "#9f60e6",
+        brand: "#9f60e6",
+        copyColor: "#F5F5F5",
+        copyAltColor: "#FF862F",
+        buttonColor: "#FF862F",
+        gradientStart: "#181514",
+        gradientEnd: "#08080a",
+        bottomGradientStart: "#0C1328",
+        bottomGradientEnd: "#16182A",
+        backgroundMain: "#16182A",
+        navBG: "#16182A",
+        iconColor: "#FF862F",
+        blobLeft: "#D6613A",
+        blobRight: "#5E2C0A",
+        blobBottom: "#696984",
+        footerGradientTop: "#16182A",
+        footerGradientBottom: "#D6613A",
+        modalText: "#F5F5F5",
+        modalClose: "#FF862F",
+      },
+    }),
+  ],
+};

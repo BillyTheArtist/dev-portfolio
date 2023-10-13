@@ -7,16 +7,23 @@ import {
 } from '@/components/ui/navigation-menu'
 import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
+import { useTheme } from '@/context/themeContext'
+
+
 
 export function NavBar () {
+
+  const {theme} = useTheme()
+
   return (
-    <header className='h-[56px] fixed z-50 py-1'>
+    <header className='h-[56px] fixed z-40 py-1'>
       <div className=' w-[100vw] flex justify-center z-50 items-center'>
+        
         <NavigationMenu className='text-[17px] '>
-          <NavigationMenuList className=' bg-footerBG p-2 rounded-full'>
+          <NavigationMenuList className={` ${theme} bg-navBG p-2 rounded-full shadow-slight`}>
             <Link href='/'>
               <NavigationMenuItem
-                className='min-w-[80px] bg-footerBG font-semibold p-[4px] rounded-l-2xl rounded-r-[2px] text-center transition-shadow hover:shadow-boxGlow'
+                className={`min-w-[80px] bg-navBG font-semibold p-[4px] rounded-l-2xl rounded-r-[2px] text-center transition-shadow hover:shadow-boxGlow`}
                 style={{ transitionDuration: '0.4s' }}
               >
                 <NavigationMenuLink className={`text-brightGrey`}>
@@ -27,7 +34,7 @@ export function NavBar () {
             <Separator decorative />
             <Link href='/myprojects'>
               <NavigationMenuItem
-                className='min-w-[80px] bg-footerBG font-semibold  p-[4px] rounded-l-2xl rounded-r-[2px] text-center transition-shadow hover:shadow-boxGlow'
+                className={`min-w-[80px] bg-navBG font-semibold  p-[4px] rounded-[2px]  text-center transition-shadow hover:shadow-boxGlow`}
                 style={{ transitionDuration: '0.4s' }}
               >
                 <NavigationMenuLink className={`text-brightGrey`}>
@@ -38,7 +45,7 @@ export function NavBar () {
             <Separator decorative />
             <Link href='/skills'>
               <NavigationMenuItem
-                className='min-w-[80px] bg-footerBG font-semibold p-[4px] rounded-[2px] text-center transition-shadow hover:shadow-boxGlow'
+                className={`min-w-[80px] bg-navBG font-semibold p-[4px] rounded-[2px] text-center transition-shadow hover:shadow-boxGlow`}
                 style={{ transitionDuration: '0.4s' }}
               >
                 <NavigationMenuLink className={`text-brightGrey`}>
@@ -49,7 +56,7 @@ export function NavBar () {
             <Separator decorative />
             <Link href='/contact'>
               <NavigationMenuItem
-                className='min-w-[80px] bg-footerBG font-semibold p-[4px] rounded-r-2xl rounded-l-[2px] text-center transition-shadow hover:shadow-boxGlow'
+                className={`min-w-[80px] bg-navBG font-semibold p-[4px] rounded-r-2xl rounded-l-[2px] text-center transition-shadow hover:shadow-boxGlow`}
                 style={{ transitionDuration: '0.4s' }}
               >
                 <NavigationMenuLink className={`text-brightGrey`}>

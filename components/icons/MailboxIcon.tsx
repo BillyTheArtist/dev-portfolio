@@ -1,10 +1,19 @@
 import React from 'react'
+import { useTheme } from '@/context/themeContext'
 
 export function MailboxIcon () {
+  const { theme } = useTheme()
+
+  let fillColor
+  if (theme === 'light') {
+    fillColor = 'svg-light-fill'
+  } else {
+    fillColor = 'svg-dark-fill'
+  }
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-mailbox svg-custom-fill'
+      className={`icon icon-tabler icon-tabler-brush ${fillColor}`}
       width='72'
       height='72'
       viewBox='0 0 24 24'

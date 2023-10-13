@@ -1,8 +1,9 @@
-
 import { HeptaBox } from './HeptaBox'
 import { MailboxIcon } from './icons/MailboxIcon'
+import { useTheme } from '@/context/themeContext'
 
 export function ContactForm () {
+  const { theme } = useTheme()
   const handleEmailButtonClick = () => {
     const emailAddress = 'billy..iv.art@gmail.com'
     const subject = 'Contact Request'
@@ -25,20 +26,36 @@ export function ContactForm () {
   return (
     <HeptaBox>
       <div
-        className={`grid grid-cols-1 gap-2 place-items-center justify-center text-center lg:text-xl text-brightGrey`}
+        className={`grid grid-cols-1 gap-1 place-items-center justify-center text-center lg:text-xl text-brightGrey`}
       >
         <MailboxIcon />
-        <h1 className={`mb-1 text-brightGrey text-[30px] font-bold`}>
+        <h1 className={`mb-1 text-copyColor text-[30px] font-bold`}>
           Contact Me!
         </h1>
         <a href={githubProfileUrl} target='_blank' rel='noopener noreferrer'>
-          <button className=' transition-transform transform hover:scale-103' style={{transitionDuration: '0.5s'}}>See my activity on Github</button>
+          <button
+            className={` text-copyColor transition-transform transform hover:scale-103`}
+            style={{ transitionDuration: '0.5s' }}
+          >
+            See my activity on Github
+          </button>
         </a>
 
         <a href={linkedinProfileUrl} target='_blank' rel='noopener noreferrer'>
-          <button className=' transition-transform transform hover:scale-103' style={{transitionDuration: '0.5s'}}>Connect on LinkedIn</button>
+          <button
+            className={` text-copyColor transition-transform transform hover:scale-103`}
+            style={{ transitionDuration: '0.5s' }}
+          >
+            Connect on LinkedIn
+          </button>
         </a>
-        <button onClick={handleEmailButtonClick} className='mb-1 transition-transform transform hover:scale-103' style={{transitionDuration: '0.5s'}}>Contact via Email</button>
+        <button
+          onClick={handleEmailButtonClick}
+          className={`text-copyColor transition-transform transform hover:scale-103`}
+          style={{ transitionDuration: '0.5s' }}
+        >
+          Contact via Email
+        </button>
       </div>
     </HeptaBox>
   )

@@ -18,11 +18,6 @@ export const useLocalStorage = <S>(
     }
   }, [state])
 
-  console.log(initialState)
-  console.log(state)
-
-
-  
   return [state, setState]
 }
 const parse = (value: string) => {

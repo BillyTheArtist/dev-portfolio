@@ -12,10 +12,12 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useLocalStorage<'dark' | 'light'>('theme')
 
-  // Check if a theme preference exists in local storage and use it if available
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'dark' || savedTheme === 'light') {
-    setTheme(savedTheme)
+  if (typeof window !== 'undefined') {
+    // Check if a theme preference exists in local storage and use it if available
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setTheme(savedTheme)
+    }
   }
 
   const toggleTheme = () => {

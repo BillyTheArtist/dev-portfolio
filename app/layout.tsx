@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import { NavBar } from '@/components/NavBar'
 import { PageFooter } from '@/components/PageFooter'
 import { Montserrat } from 'next/font/google'
-import styles from './Root.module.css'
+import { ToggleTheme } from '@/components/ToggleTheme'
+import { ThemeProvider } from '@/context/themeContext'
 
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '600'],
@@ -20,17 +21,21 @@ export default function RootLayout ({
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang='en'>
-      <body className={montserrat.className}>
+    <ThemeProvider>
+      <html lang='en'>
+        <body className={`${montserrat.className} bg-boxLite`}>
           <NavBar />
-        <main
-          className={`bg-gradient-to-b from-nonBlack to-liteBG min-h-[calc(100vh-177px)] pt-[56px]`}
-        >
-          {children}
-        </main>
-        <PageFooter />
-      </body>
-    </html>
+          <ToggleTheme />
+          <main
+            className={` bg-brand min-h-[calc(100vh-177px)] pt-[56px]`}
+          >
+            {children}
+          </main>
+          <PageFooter />
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }

@@ -10,7 +10,7 @@ export const useTheme = () => {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useLocalStorage<'dark' | 'light'>('theme')
+  const [theme, setTheme] = useLocalStorage<'dark' | 'light'>('theme', 'light')
 
   if (typeof window !== 'undefined') {
     // Check if a theme preference exists in local storage and use it if available

@@ -15,7 +15,7 @@ export function ShineSelf () {
 
   return (
     <div className='w-full h-full flex justify-center items-center'>
-      <Image className='relative lg:right-[65px] lg:top-[105px]' src='/images/blobSelf.png' alt='hero' height={512} width={512} />
+      <Image className='relative lg:right-[65px] lg:top-[105px]' src='/images/newfixedimg.png' alt='hero' height={512} width={512} />
     </div>
   )
 }
